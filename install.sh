@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Change directory
+SCRIPT_DIR=$(dirname -- "$( readlink -f -- "$0"; )") && cd "$SCRIPT_DIR" || exit
+
 sudo apt-get install -y neovim htop git pcmanfm nitrogen gnome-backgrounds xinit xterm xfce4-terminal x11-xserver-utils command-not-found spice-vdagent xdg-utils dmenu xsel firefox-esr zsh zsh-autosuggestions zsh-syntax-highlighting
 
 wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
