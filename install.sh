@@ -43,3 +43,6 @@ if [ -f /etc/default/grub ]; then
   sudo grub-mkconfig -o /boot/grub/grub.cfg
 fi
 
+sudo update-command-not-found
+sudo apt-file update
+
