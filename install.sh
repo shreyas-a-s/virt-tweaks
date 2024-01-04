@@ -39,7 +39,7 @@ cp .icewm/startup ~/.icewm/startup
 
 # Change Grub Timeout
 if [ -f /etc/default/grub ]; then
-  sudo sed -i "/GRUB_TIMEOUT/ c\GRUB_TIMEOUT=1" /etc/default/grub
+  sudo sed -i "/GRUB_TIMEOUT/ c\GRUB_TIMEOUT=0" /etc/default/grub
   sudo grub-mkconfig -o /boot/grub/grub.cfg
 fi
 
