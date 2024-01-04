@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Set screen resolution
+xrandr -s 1360x768 &
+sleep 1 &&
+
+# Set previous set wallpaper
+nitrogen --restore
+sleep 1 &&
+
+# Daemon for syncing clipboard between host and guest VM
+spice-vdagent
+

@@ -25,4 +25,4 @@ printf "\
 
 [ -d ~/.icewm ] || mkdir ~/.icewm
 cp .icewm/keys ~/.icewm/
-
+cp .icewm/startup ~/.icewm/startup
