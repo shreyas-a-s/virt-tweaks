@@ -1,0 +1,20 @@
+# Launching most used programs
+key "Super+P"               dmenu_run -b -i
+key "Super+Return"          x-terminal-emulator
+key "Super+B"               x-www-browser
+key "Super+F"               pcmanfm
+
+# Close window
+key "Super+Q"               icesh -f close
+
+# System Controls
+key "Super+Shift+S"         lxsession-logout
+key "Super+Shift+R"         lxsession-logout
+
+# Audio
+key "Super+KP_Subtract"     amixer sset Master 5%-
+key "Super+KP_Add"          amixer sset Master 5%+
+key "XF86AudioLowerVolume"  amixer sset Master 5%-
+key "XF86AudioRaiseVolume"  amixer sset Master 5%+
+key "XF86AudioMute"         amixer sset Master toggle
+

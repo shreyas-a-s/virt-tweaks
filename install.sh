@@ -23,3 +23,6 @@ printf "\
 \n  startx\
 \nfi" >> ~/.bash_profile
 
+[ -d ~/.icewm ] || mkdir ~/.icewm
+cp .icewm/keys ~/.icewm/
+
