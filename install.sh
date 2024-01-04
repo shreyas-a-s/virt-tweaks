@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-sudo apt-get install -y icewm neovim htop git pcmanfm nitrogen gnome-backgrounds xinit xterm xfce4-terminal x11-xserver-utils command-not-found spice-vdagent xdg-utils dmenu xsel firefox-esr
+sudo apt-get install -y icewm neovim htop git pcmanfm nitrogen gnome-backgrounds xinit xterm xfce4-terminal x11-xserver-utils command-not-found spice-vdagent xdg-utils dmenu xsel firefox-esr zsh zsh-autosuggestions zsh-syntax-highlighting
+
+printf "### SET XDG DIR FOR ZSH ###\nZDOTDIR=~/.config/zsh\n" | sudo tee -a /etc/zsh/zshenv > /dev/null # set dotfile directory for zsh
+
+while ! chsh -s "$(command -v zsh)"; do :; done;;
 
 sudo update-alternatives --set x-terminal-emulator /usr/bin/xfce4-terminal.wrapper
 
@@ -19,10 +23,11 @@ fi
 
 # Enable automatic startx
 printf "\
-\nif [ -z "\$DISPLAY" ] && [ \$(tty) == /dev/tty1 ]; then\
+\nif [ -z "\$DISPLAY" ] && [ \$(tty) = /dev/tty1 ]; then\
 \n  startx\
-\nfi" >> ~/.bash_profile
+\nfi" | sudo tee -a /etc/zsh/zprofile
 
 [ -d ~/.icewm ] || mkdir ~/.icewm
 cp .icewm/keys ~/.icewm/
 cp .icewm/startup ~/.icewm/startup
+
