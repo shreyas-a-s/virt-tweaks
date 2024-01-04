@@ -1,6 +1,6 @@
 # Launching most used programs
-key "Super+P"               dmenu_run -b -i
-key "Super+Return"          x-terminal-emulator
+key "Super+P"               dmenu_run -i
+key "Super+Return"          sh -c 'xfce4-terminal --hide-menubar --maximize --font="NotoSansMNerdFont 11" || x-terminal-emulator'
 key "Super+B"               x-www-browser
 key "Super+F"               pcmanfm
 
