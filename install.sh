@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-sudo apt-get install -y icewm neovim htop git pcmanfm nitrogen gnome-backgrounds xinit xterm xfce4-terminal x11-xserver-utils command-not-found spice-vdagent xdg-utils dmenu xsel firefox-esr zsh zsh-autosuggestions zsh-syntax-highlighting
+sudo apt-get install -y neovim htop git pcmanfm nitrogen gnome-backgrounds xinit xterm xfce4-terminal x11-xserver-utils command-not-found spice-vdagent xdg-utils dmenu xsel firefox-esr zsh zsh-autosuggestions zsh-syntax-highlighting
+
+wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod +x nvim.appimage
+sudo mv nvim.appimage /usr/local/bin/nvim
 
 printf "### SET XDG DIR FOR ZSH ###\nZDOTDIR=~/.config/zsh\n" | sudo tee -a /etc/zsh/zshenv > /dev/null # set dotfile directory for zsh
 
