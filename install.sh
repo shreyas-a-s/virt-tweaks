@@ -10,8 +10,7 @@ chmod +x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
 
 printf "### SET XDG DIR FOR ZSH ###\nZDOTDIR=~/.config/zsh\n" | sudo tee -a /etc/zsh/zshenv > /dev/null # set dotfile directory for zsh
-
-while ! chsh -s "$(command -v zsh)"; do :; done;;
+while ! chsh -s "$(command -v zsh)"; do :; done
 
 sudo update-alternatives --set x-terminal-emulator /usr/bin/xfce4-terminal.wrapper
 
