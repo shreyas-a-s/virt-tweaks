@@ -3,7 +3,7 @@
 # Change directory
 SCRIPT_DIR=$(dirname -- "$( readlink -f -- "$0"; )") && cd "$SCRIPT_DIR" || exit
 
-sudo apt-get install -y htop git pcmanfm nitrogen xinit xterm xfce4-terminal x11-xserver-utils command-not-found spice-vdagent dmenu xsel firefox-esr zsh zsh-autosuggestions zsh-syntax-highlighting icewm
+sudo apt-get install -y htop git pcmanfm xinit xterm xfce4-terminal x11-xserver-utils command-not-found spice-vdagent dmenu xsel firefox-esr zsh zsh-autosuggestions zsh-syntax-highlighting icewm
 
 wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod +x nvim.appimage
