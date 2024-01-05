@@ -1,4 +1,3 @@
-command-not-found
 curl
 dmenu
 firefox-esr
