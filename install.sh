@@ -33,9 +33,10 @@ printf "\
 \n  startx\
 \nfi" | sudo tee -a /etc/zsh/zprofile > /dev/null
 
-[ -d ~/.icewm ] || mkdir ~/.icewm
-cp .icewm/keys ~/.icewm/
-cp .icewm/startup ~/.icewm/startup
+if [ -d ~/.icewm ]; then
+  rm -rf ~/.icewm
+fi
+cp .icewm ~/
 
 # Change Grub Timeout
 if [ -f /etc/default/grub ]; then
