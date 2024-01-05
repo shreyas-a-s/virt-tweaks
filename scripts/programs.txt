@@ -9,7 +9,6 @@ lxsession-logout
 pcmanfm
 spice-vdagent
 wget
-x11-xserver-utils
 xfce4-terminal
 xinit
 xsel
