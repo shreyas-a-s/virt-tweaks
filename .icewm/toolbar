@@ -1,0 +1,4 @@
+prog    "Terminal"  org.xfce.terminal  x-terminal-emulator
+prog    "Files"    file-roller  pcmanfm
+prog    "Browser"   !      x-www-browser
+
