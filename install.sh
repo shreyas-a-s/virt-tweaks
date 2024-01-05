@@ -6,24 +6,12 @@ SCRIPT_DIR=$(dirname -- "$( readlink -f -- "$0"; )") && cd "$SCRIPT_DIR" || exit
 # Custom scripts
 ./scripts/install-programs.sh
 ./scripts/install-nvim.sh
+./scripts/setup-autologin-to-tty.sh
 
 printf "### SET XDG DIR FOR ZSH ###\nZDOTDIR=~/.config/zsh\n" | sudo tee -a /etc/zsh/zshenv > /dev/null # set dotfile directory for zsh
 while ! chsh -s "$(command -v zsh)"; do :; done
 
 sudo update-alternatives --set x-terminal-emulator /usr/bin/xfce4-terminal.wrapper
-
-# Enable autologin
-if [ -f /etc/inittab ]; then # For non-systemd distros
-  sudo cp /etc/inittab /etc/inittab.bak
-  sed -i '/1:2345/s/^/#/' /etc/inittab
-  sed -i "/1:2345/a\1:2345:respawn:/bin/login -f $USER tty1 </dev/tty1 >/dev/tty1 2>&1" /etc/inittab
-else # For systemd distros
-  [ -d /etc/systemd/system/getty@tty1.service.d ] || sudo mkdir /etc/systemd/system/getty@tty1.service.d
-  printf "[Service]\
-  \nExecStart=\
-  \nExecStart=-/sbin/agetty -o '-p -f -- \\\\\\\\u' --noclear --autologin $USER %%I \$TERM\
-  \n" | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf > /dev/null
-fi
 
 # Enable automatic startx
 printf "\
