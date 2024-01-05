@@ -1,9 +1,10 @@
 #!/bin/sh
 
 # Set screen resolution
-xrandr -s 1360x768 &
-sleep 1 &&
+# xrandr -s 1360x768 &
+# sleep 1 &&
 
-# Daemon for syncing clipboard between host and guest VM
+# Daemon for syncing clipboard between host and guest VM &
+# for providing display drivers to set proper resolution
 spice-vdagent &
 
