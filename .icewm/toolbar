@@ -1,4 +1,4 @@
 prog    "Terminal"  org.xfce.terminal  x-terminal-emulator
-prog    "Files"    file-roller  pcmanfm
-prog    "Browser"   !      x-www-browser
-
+prog    "Files"     file-roller        pcmanfm
+prog    "Firefox"   firefox            sh -c 'firefox-esr || firefox'
+prog    "Chrome"    web-browser        sh -c 'brave-browser || brave'
