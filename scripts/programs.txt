@@ -9,7 +9,6 @@ pcmanfm
 spice-vdagent
 wget
 xfce4-terminal
-x11-xserver-utils
 xinit
 xsel
 xterm
