@@ -1,6 +1,7 @@
 curl
 dmenu
 firefox-esr
+gcc
 git
 htop
 icewm
