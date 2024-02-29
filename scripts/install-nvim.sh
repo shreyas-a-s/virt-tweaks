@@ -6,7 +6,7 @@ if command -v apt-get > /dev/null; then # Install for debian-based distros
 fi
 
 # Install fd
-FD_VERSION=apt-cache show fd-find | awk 'NR==3{print $2}'
+FD_VERSION="$(apt-cache show fd-find | awk 'NR==3{print $2}')"
 FD_MAJOR_VERSION="$(echo "$FD_VERSION" | awk -F . '{print $1}')"
 FD_MINOR_VERSION="$(echo "$FD_VERSION" | awk -F . '{print $2}')"
 if [ "$FD_MAJOR_VERSION" -gt 8 ]; then
