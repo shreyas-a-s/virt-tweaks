@@ -16,6 +16,7 @@ elif [ "$FD_MAJOR_VERSION" -eq 8 ] && [ "$FD_MINOR_VERSION" -gt 3 ]; then
 else
   wget https://github.com/sharkdp/fd/releases/download/v8.3.2/fd_8.3.2_amd64.deb
   sudo apt-get install ./fd_8.3.2_amd64.deb
+  rm ./fd_8.3.2_amd64.deb
 fi
 
 # Install neovim
