@@ -19,6 +19,9 @@ else
   rm ./fd_8.3.2_amd64.deb
 fi
 
+# Symlink fd -> fdfind
+sudo ln -sf "$(which fdfind)" "$(dirname "$(which fdfind)")/fd"
+
 # Install neovim
 wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod +x nvim.appimage
