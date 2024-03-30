@@ -2,7 +2,7 @@
 
 # Install dependencies
 if command -v apt-get > /dev/null; then # Install for debian-based distros
-  sudo apt-get install -y gcc ripgrep wget xsel
+  sudo apt-get install -y gcc ripgrep wget xsel fuse
 fi
 
 # Install fd
