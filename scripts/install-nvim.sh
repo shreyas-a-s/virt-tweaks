@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Install dependencies
-if command -v apt-get > /dev/null; then # Install for debian-based distros
+if command -v apt-get >/dev/null; then # Install for debian-based distros
   sudo apt-get install -y gcc ripgrep wget xsel fuse npm unzip python3-venv zoxide
 fi
 
@@ -23,7 +23,8 @@ fi
 sudo ln -sf "$(which fdfind)" "$(dirname "$(which fdfind)")/fd"
 
 # Install neovim
-wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod +x nvim.appimage
-sudo mv nvim.appimage /usr/local/bin/nvim
-
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+if [ -d "/opt/nvim-linux64/" ]; then
+  sudo rm -rf /opt/nvim-linux64/
+fi
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
