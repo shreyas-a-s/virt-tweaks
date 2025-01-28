@@ -28,3 +28,4 @@ if [ -d "/opt/nvim-linux64/" ]; then
   sudo rm -rf /opt/nvim-linux64/
 fi
 sudo tar -C /opt -xzf nvim-linux64.tar.gz
+rm nvim-linux64.tar.gz
